@@ -81,6 +81,7 @@ input {
 }
 
 .waterAmount {
+  margin-bottom: 5vh;
   border-radius: 0.6vh;
   background-image: linear-gradient(rgba(0, 46, 146, 0.1), rgb(35, 134, 255));
   display: inline-block;
@@ -101,4 +102,23 @@ input {
 
 #mixerT {
   margin: auto;
+}
+
+.instructions {
+  margin: 5vh auto 5vh auto;
+}
+
+.instructions > * {
+  margin: auto auto 3vh auto;
+  max-width: 800px;
+  font-size: 2vh;
+  text-align: left;
+}
+
+@media only screen and (max-width: 800px) {
+  h2,
+  p,
+  .amount {
+    font-size: 1.8vh;
+  }
 }

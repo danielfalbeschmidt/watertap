@@ -31,7 +31,6 @@ const coldTemp = 6;
 const hotTemp = 60;
 const tempSpeed = 0.03;
 const amountSpeed = tempSpeed * 300;
-const K = 273.15;
 let relTemp;
 const relHot = hotTemp - coldTemp;
 const rgbCoef = 255 / relHot;
@@ -71,7 +70,7 @@ function initBtns() {
 }
 
 function resetValues() {
-  message.innerHTML = "Type in temperature";
+  message.innerHTML = "Type in a temperature:";
   coldPipelineTDiv.innerHTML = coldTemp;
   hotPipelineTDiv.innerHTML = hotTemp;
   coldMixerTDiv.innerHTML = roomTemp;
@@ -175,7 +174,7 @@ function pourWater() {
       if (coldMixerTemp <= goalTemp) {
         goalTempReached = true;
       }
-    } else if (goalTemp >= hotMixerTemp) {
+    } else {
       coldGoalFactor = 0;
       hotGoalFactor = 1;
       pourHotWater(1);
@@ -193,10 +192,10 @@ function pourWater() {
     if (goalTemp != coldTemp) {
       pourHotWater(hotGoalFactor);
     }
-    mixerTemp =
-      (coldMixerTemp + K) * coldGoalFactor +
-      (hotMixerTemp + K) * hotGoalFactor -
-      K;
+    mixerTemp = goalTemp;
+      // (coldMixerTemp + 271.15) * coldGoalFactor +
+      // (hotMixerTemp + 271.15) * hotGoalFactor -
+      // 271.15;
   }
   updateElements();
 }
