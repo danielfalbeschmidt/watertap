@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" async defer></script>
+    <title>Optimal Water Tap</title>
+  </head>
+  <body>
+    <!--<p>
+      This application presents a way to save tap water in a cold and hot water
+      mixing system. This project is inspired by the inherent problem with
+      water taps in our everyday life: The water in the hot and cold water mixer
+      and the upper parts of those two's pipelines attatched eventually gets to
+      room temperature. Consequently, when water of the temperature other that
+      the room temperature is needed, some water has to be run (i.e. wasted) in
+      order to reach that goal. In this application minimising the amount of
+      wasted water is carried out programmatically.
+    </p> -->
+    <div class="grid">
+      <div id="cold">
+        <h2>Cold</h2>
+        <div class="tempIcon" id="coldPipelineT"></div>
+        <div class="pipe" id="pipeCold"></div>
+        <div class="tempIcon" id="coldMixerT"></div>
+        <p class="ratio" id="ratioCold"></p>
+      </div>
+      <div class="tap">
+        <h1>Optimal Water Tap</h1>
+        <p id="message"></p>
+        <h2>Goal</h2>
+        <input type="text" id="goalTempInput" />
+        <br />
+        <button id="startButton">Open</button>
+        <button id="stopButton">Shut</button>
+        <div class="mixer">
+          <h2>Water tap</h2>
+          <div class="tempIcon" id="mixerT"></div>
+        </div>
+      </div>
+      <div id="hot">
+        <h2>Hot</h2>
+        <div class="tempIcon" id="hotPipelineT"></div>
+        <div class="pipe" id="pipeHot"></div>
+        <div class="tempIcon" id="hotMixerT"></div>
+        <p class="ratio" id="ratioHot"></p>
+      </div>
+    </div>
+    <div class="grid">
+      <div>
+        <div class="waterAmount" id="coldAmount">
+          <div class="amount" id="coldNumber"></div>
+        </div>
+      </div>
+      <div>
+        <div class="waterAmount" id="totalAmount">
+          <div class="amount" id="totalNumber"></div>
+        </div>
+      </div>
+      <div>
+        <div class="waterAmount" id="hotAmount">
+          <div class="amount" id="hotNumber"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
